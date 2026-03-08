@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWIFT AC Rental - Premium AC Services in Okhla</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --gold-premium: #b89355; /* Aapke logo ka bronze/gold color */
+            --dark-bg: #1a1a1a;
+        }
+        .gold-text { color: var(--gold-premium); }
+        .gold-bg { background-color: var(--gold-premium); }
+        .gold-border { border-color: var(--gold-premium); }
+        
+        .gallery-img {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover { transform: scale(1.05); }
+
+        /* Modal for full photo view */
+        #photoModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+        }
+    </style>
+</head>
+<body class="bg-[#121212] text-white font-sans">
+
+    <nav class="sticky top-0 z-50 bg-[#1a1a1a]/95 border-b gold-border py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="1000080759.jpg" alt="SWIFT AC Logo" class="h-12 w-auto rounded border gold-border">
+                <span class="text-2xl font-bold gold-text tracking-wider uppercase">SWIFT AC Rental</span>
+            </div>
+            <div class="hidden md:block">
+                <a href="tel:+918595951232" class="gold-bg text-black px-4 py-2 rounded-full font-bold">Call: +91 8595951232</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative h-[400px] flex items-center justify-center overflow-hidden">
+        <img src="1000080788.png" alt="Business Banner" class="absolute w-full h-full object-cover opacity-40">
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 gold-text">SWIFT AC RENTAL</h1>
+            <p class="text-xl md:text-2xl italic">AC Rent in Okhla - Fast & Reliable</p>
+        </div>
+    </section>
+
+    <div class="bg-[#1f1f1f] py-6 border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a href="tel:+918595951232" class="flex items-center justify-center gap-3 bg-blue-600 p-4 rounded-xl hover:bg-blue-700 transition">
+                <i class="fas fa-phone-alt text-2xl"></i>
+                <span class="font-bold text-lg">Direct Call: +91 8595951232</span>
+            </a>
+            <a href="https://wa.me/918595951232" class="flex items-center justify-center gap-3 bg-green-600 p-4 rounded-xl hover:bg-green-700 transition">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                <span class="font-bold text-lg">WhatsApp Chat</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="py-16 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+        <div class="bg-[#1a1a1a] p-8 rounded-3xl border gold-border shadow-2xl">
+            <h2 class="text-3xl font-bold gold-text mb-6 flex items-center gap-2">
+                <i class="fas fa-snowflake"></i> AC Rental Details
+            </h2>
+            <h3 class="text-xl font-semibold mb-4 text-gray-300 italic">Window & Split AC Available</h3>
+            <ul class="space-y-4 text-lg">
+                <li><i class="fas fa-check-circle gold-text mr-2"></i> Hassle-Free Maintenance</li>
+                <li><i class="fas fa-check-circle gold-text mr-2"></i> Flexible Contract Terms</li>
+                <li><i class="fas fa-check-circle gold-text mr-2"></i> Wide Variety of Models</li>
+                <li><i class="fas fa-check-circle gold-text mr-2"></i> Quick Set-up</li>
+            </ul>
+        </div>
+
+        <div class="bg-[#1a1a1a] p-8 rounded-3xl border gold-border shadow-2xl">
+            <h2 class="text-3xl font-bold gold-text mb-6 flex items-center gap-2">
+                <i class="fas fa-tools"></i> AC Repair Details
+            </h2>
+            <ul class="space-y-4 text-lg mb-6">
+                <li><i class="fas fa-cog gold-text mr-2"></i> AC Gas Charging</li>
+                <li><i class="fas fa-cog gold-text mr-2"></i> P.C.B Repair</li>
+                <li><i class="fas fa-cog gold-text mr-2"></i> Deep Jet Servicing</li>
+                <li><i class="fas fa-cog gold-text mr-2"></i> Fault Diagnosis</li>
+            </ul>
+            <p class="p-3 bg-gold-bg text-black font-bold text-center rounded-lg uppercase tracking-widest">
+                All spare parts available
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-[#0f0f0f]">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold gold-text mb-10 text-center uppercase">Our Work Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <img src="photo1.jpg" onclick="openPhoto(this.src)" class="gallery-img h-48 w-full object-cover rounded-xl border border-gray-700 shadow-lg" alt="Work 1">
+                <img src="photo2.jpg" onclick="openPhoto(this.src)" class="gallery-img h-48 w-full object-cover rounded-xl border border-gray-700 shadow-lg" alt="Work 2">
+                <img src="photo3.jpg" onclick="openPhoto(this.src)" class="gallery-img h-48 w-full object-cover rounded-xl border border-gray-700 shadow-lg" alt="Work 3">
+                <img src="photo4.jpg" onclick="openPhoto(this.src)" class="gallery-img h-48 w-full object-cover rounded-xl border border-gray-700 shadow-lg" alt="Work 4">
+                <img src="photo5.jpg" onclick="openPhoto(this.src)" class="gallery-img h-48 w-full object-cover rounded-xl border border-gray-700 shadow-lg" alt="Work 5">
+                <img src="photo6.jpg" onclick="openPhoto(this.src)" class="gallery-img h-48 w-full object-cover rounded-xl border border-gray-700 shadow-lg" alt="Work 6">
+                <img src="photo7.jpg" onclick="openPhoto(this.src)" class="gallery-img h-48 w-full object-cover rounded-xl border border-gray-700 shadow-lg" alt="Work 7">
+                <img src="photo8.jpg" onclick="openPhoto(this.src)" class="gallery-img h-48 w-full object-cover rounded-xl border border-gray-700 shadow-lg" alt="Work 8">
+                <img src="photo9.jpg" onclick="openPhoto(this.src)" class="gallery-img h-48 w-full object-cover rounded-xl border border-gray-700 shadow-lg" alt="Work 9">
+                <img src="photo10.jpg" onclick="openPhoto(this.src)" class="gallery-img h-48 w-full object-cover rounded-xl border border-gray-700 shadow-lg" alt="Work 10">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-3xl font-bold gold-text mb-6">Our Location</h2>
+                <div class="rounded-3xl overflow-hidden border-2 gold-border shadow-2xl">
+                    <iframe 
+                        width="100%" 
+                        height="400" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        src="https://maps.google.com/maps?q=28.549583,77.298801&hl=en&z=16&output=embed">
+                    </iframe>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 space-y-6">
+                <div class="bg-[#1a1a1a] p-8 rounded-3xl border gold-border">
+                    <h3 class="text-2xl font-bold gold-text mb-4 uppercase">Visit Our Office</h3>
+                    <p class="text-xl leading-relaxed text-gray-300">
+                        E 173 high tention road,<br>
+                        shaheen bagh jamia nagar okhla,<br>
+                        new delhi 110025
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 text-xl">
+                    <i class="fas fa-user-circle gold-text text-3xl"></i>
+                    <div>
+                        <p class="text-gray-400 text-sm">Owner</p>
+                        <p class="font-bold">Arsalan Khan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="photoModal" onclick="this.style.display='none'" class="flex items-center justify-center p-4">
+        <img id="modalImg" src="" class="max-w-full max-h-full rounded-lg shadow-2xl">
+    </div>
+
+    <footer class="bg-black py-8 border-t gold-border text-center">
+        <p class="text-gray-500 italic">© 2026 SWIFT AC Rental. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openPhoto(src) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('photoModal').style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>
